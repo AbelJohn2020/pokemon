@@ -10,21 +10,21 @@ export type propsPokemon = {
 
 export const getCharacters = async () => {
     try {
-        const response = await pokeApi.get('/pokemon?limit=1200/');
+        const response = await pokeApi.get('/pokemon/');
         const pokemons = response.data.results;
-        return infromationPokemon(pokemons);
+        return cardPokemon(pokemons);
     } catch(error) {
-        console.log(error);
+        alert(error);
     }
 }
 
-export const movesPokemon = async (url: String) => {
+export const informationPokemon = async (url: String) => {
     const request = await axios(`${url}`);
     const data = request.data;
     return data;
 }
 
-const infromationPokemon = ( pokemons: Array<propsPokemon> ) => {
+const cardPokemon = ( pokemons: Array<propsPokemon> ) => {
     const newArrPokemon = pokemons.map( ({name, url}: propsPokemon) => {
         const getUrl = url.split('/');
         const getId = getUrl[6];
