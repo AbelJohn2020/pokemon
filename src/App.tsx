@@ -1,12 +1,10 @@
 import React from 'react';
-import { getCharacters } from './components/utils';
+import ListPokemons from './components/ListPokemons/ListPokemons';
 
 function App() {
-  getCharacters()
-    .then(res => console.log(res))
-    .catch(error => console.log(error));
   return (
     <div className="App">
+      <ListPokemons />
     </div>
   );
 }

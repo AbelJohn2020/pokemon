@@ -1,6 +1,6 @@
 import axios from "axios";
 import { pokeApi } from "../../app/config"
-import { FetchPokemons, Pokemon, Pokemons } from "../../interfaces";
+import { FetchPokemons, Pokemon, Pokemons } from "../interfaces";
 
 export const getCharacters = async () => {
     try {
@@ -10,6 +10,12 @@ export const getCharacters = async () => {
     } catch (error) {
         console.log(error)
     }
+}
+
+export const movesPokemon = async (url: String) => {
+    const request = await axios(`${url}`);
+    const data = request.data;
+    return data;
 }
 
 const infromationPokemon = ( pokemons: Pokemons[] ): Pokemon[] => {
