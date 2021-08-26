@@ -2,14 +2,10 @@ import axios from "axios";
 import { pokeApi } from "../../app/config"
 import { FetchPokemons, Pokemon, Pokemons } from "../interfaces";
 
-export const getCharacters = async () => {
-    try {
-        const response = await pokeApi.get<FetchPokemons>('/pokemon?limit=1200/');
-        const pokemons = response.data.results;
-        return infromationPokemon(pokemons);
-    } catch (error) {
-        console.log(error)
-    }
+export const getCharacters = async (): Promise<Pokemon[]> => {
+    const response = await pokeApi.get<FetchPokemons>('/pokemon?limit=1200/');
+    const pokemons = response.data.results;
+    return infromationPokemon(pokemons);
 }
 
 export const movesPokemon = async (url: String) => {
