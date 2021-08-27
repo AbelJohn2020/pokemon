@@ -9,9 +9,11 @@ export const colors = {
     gray: "#555555",
     midGray: "#777777",
     cColor: "#CCCCCC",
+    aColor: "#AAAAAA",
     lightLightGray: "#505050",
     lightLightBlack: "#484848",
     darkWhite: "#F2F2F2",
     lightShadow: "rgba(255, 255, 255, 0.10)",
     lightBlack: "#444444",
+    secondBlack: "#303030",
 };
