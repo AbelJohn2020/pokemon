@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ListPokemons from './components/ListPokemons/ListPokemons';
+import Pokemon from './components/Pokemon/Pokemon';
 import { getCharacters, propsPokemon } from './components/utils';
 
 function App() {
@@ -27,8 +28,14 @@ function App() {
             <ListPokemons pokemonData={pokemonData} loading={loading} />
           </Route>
           {
-            pokemonData.map( pokemon => (
-              <Route exact path={`/pokemon/${pokemon.id}`}>
+            pokemonData.map( data => (
+              <Route exact path={`/pokemon/${data.id}`} key={data.id}>
+                <Pokemon 
+                  id={data.id} 
+                  url={data.url} 
+                  name={data.name} 
+                  picture={data.picture} 
+                />
               </Route>
             ))
           }

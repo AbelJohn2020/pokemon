@@ -18,7 +18,7 @@ export const getCharacters = async () => {
     }
 }
 
-export const informationPokemon = async (url: String) => {
+export const informationPokemon = async (url: string) => {
     const request = await axios(`${url}`);
     const data = request.data;
     return data;

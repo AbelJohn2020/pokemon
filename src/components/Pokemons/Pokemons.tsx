@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { propsPokemon } from '../utils';
 
 const Pokemons = ( pokemonData: propsPokemon[]) => {
@@ -18,7 +19,9 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
                                 <tr key={id}>
                                     <td>{name}</td>
                                     <td>
-                                        <img src={picture} alt={name} />
+                                        <Link to={`/pokemon/${id}`}>
+                                            <img src={picture} alt={name} />
+                                        </Link>
                                     </td>
                                 </tr>
                             ))
