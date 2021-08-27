@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { informationPokemon } from '../utils';
 import Loading from '../Loading/Loading';
 import { InformationPokemon } from './Types';
+import { Li, Ul } from './PokemonStyles';
 
 type propsData = {
     id: string,
@@ -66,47 +67,47 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                             </div>
                             <h1>{name}</h1>
                             <div>
-                                <ul>
-                                    <li>
+                                <Ul>
+                                    <Li>
                                         <h4>abilities: </h4>
                                         {
                                             information && 
                                                 information.abilities.map( ability => (
-                                                    <div key={ability}>{ability}</div>
+                                                    <p key={ability}>{ability}</p>
                                                 ))
                                         }
-                                    </li>
-                                    <li>
+                                    </Li>
+                                    <Li>
                                         <h4>base experience: </h4>
-                                        <div>{information && information.experience}</div>
-                                    </li>
-                                    <li>
+                                        <p>{information && information.experience}</p>
+                                    </Li>
+                                    <Li>
                                         <h4>heigh: </h4>
-                                        <div>{information && information.height}</div>
-                                    </li>
-                                    <li>
+                                        <p>{information && information.height}</p>
+                                    </Li>
+                                    <Li>
                                         <h4>main movements: </h4>
                                         {
                                             information && 
                                                 information.moves.slice(0, 8).map( move => (
-                                                    <div key={move}>{move}</div>
+                                                    <p key={move}>{move}</p>
                                                 ))
                                         }
-                                    </li>
-                                    <li>
+                                    </Li>
+                                    <Li>
                                         <h4>type: </h4>
                                         {
                                             information && 
                                                 information.type.map( type => (
-                                                    <div key={type}>{type}</div>
+                                                    <p key={type}>{type}</p>
                                                 ))
                                         }
-                                    </li>
-                                    <li>
+                                    </Li>
+                                    <Li>
                                         <h4>weight: </h4>
-                                        <div>{information && information.weight}</div>
-                                    </li>
-                                </ul>
+                                        <p>{information && information.weight}</p>
+                                    </Li>
+                                </Ul>
                             </div>
                         </div>
             }
