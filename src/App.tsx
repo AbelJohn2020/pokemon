@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ListPokemons from './components/ListPokemons/ListPokemons';
+import Navbar from './components/Navbar/Navbar';
 import Pokemon from './components/Pokemon/Pokemon';
 import { getCharacters, propsPokemon } from './components/utils';
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <ListPokemons pokemonData={pokemonData} loading={loading} />

@@ -1,6 +1,8 @@
 export const colors = {
-    shadow: "rgba(0, 0, 0, 0.25)",
-    blue: "#3944BC",
+    shadow: "rgba(0, 0, 0, 0.20)",
+    secondShadow: "rgba(0, 0, 0, 0.16)",
+    blue: "#2F52A4",
+    secondBlue: "#4F64A7",
     white: "#FFFFFF",
     darkDarwhite: "#E8E8E8",
     lightGray: "#DDDDDD",

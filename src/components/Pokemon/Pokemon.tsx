@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { informationPokemon } from '../utils';
 import Loading from '../Loading/Loading';
 import { InformationPokemon } from './Types';
-import { Li, Ul } from './PokemonStyles';
+import { DivImg, H1Pokemon, InformationCard, LeftDiv, Li, PokemonCard, PokemonContainer, RightDiv, Ul } from './PokemonStyles';
 
 type propsData = {
     id: string,
@@ -57,61 +57,65 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
     const information = informationCard();
 
     return (
-        <div>
-            {
-                isLoading
-                    ?   <Loading />
-                    :   <div>
-                            <div>
-                                <img src={picture} alt={name} />
-                            </div>
-                            <h1>{name}</h1>
-                            <div>
-                                <Ul>
-                                    <Li>
-                                        <h4>abilities: </h4>
-                                        {
-                                            information && 
-                                                information.abilities.map( ability => (
-                                                    <p key={ability}>{ability}</p>
-                                                ))
-                                        }
-                                    </Li>
-                                    <Li>
-                                        <h4>base experience: </h4>
-                                        <p>{information && information.experience}</p>
-                                    </Li>
-                                    <Li>
-                                        <h4>heigh: </h4>
-                                        <p>{information && information.height}</p>
-                                    </Li>
-                                    <Li>
-                                        <h4>main movements: </h4>
-                                        {
-                                            information && 
-                                                information.moves.slice(0, 8).map( move => (
-                                                    <p key={move}>{move}</p>
-                                                ))
-                                        }
-                                    </Li>
-                                    <Li>
-                                        <h4>type: </h4>
-                                        {
-                                            information && 
-                                                information.type.map( type => (
-                                                    <p key={type}>{type}</p>
-                                                ))
-                                        }
-                                    </Li>
-                                    <Li>
-                                        <h4>weight: </h4>
-                                        <p>{information && information.weight}</p>
-                                    </Li>
-                                </Ul>
-                            </div>
-                        </div>
-            }
-        </div>
+        <PokemonContainer>
+            <PokemonCard>
+                {
+                    isLoading
+                        ?   <Loading />
+                        :   <InformationCard>
+                                <LeftDiv>
+                                    <DivImg>
+                                        <img src={picture} alt={name} />
+                                    </DivImg>
+                                </LeftDiv>
+                                <RightDiv>
+                                    <H1Pokemon>{name}</H1Pokemon>
+                                    <Ul>
+                                        <Li>
+                                            <h4>abilities: </h4>
+                                            {
+                                                information && 
+                                                    information.abilities.map( ability => (
+                                                        <p key={ability}>{ability}</p>
+                                                    ))
+                                            }
+                                        </Li>
+                                        <Li>
+                                            <h4>base experience: </h4>
+                                            <p>{information && information.experience}</p>
+                                        </Li>
+                                        <Li>
+                                            <h4>heigh: </h4>
+                                            <p>{information && information.height}</p>
+                                        </Li>
+                                        <Li>
+                                            <h4>main movements: </h4>
+                                            {
+                                                information && 
+                                                    information.moves.slice(0, 8).map( move => (
+                                                        <p key={move}>{move}</p>
+                                                    ))
+                                            }
+                                        </Li>
+                                        <Li>
+                                            <h4>type: </h4>
+                                            {
+                                                information && 
+                                                    information.type.map( type => (
+                                                        <p key={type}>{type}</p>
+                                                    ))
+                                            }
+                                        </Li>
+                                        <Li>
+                                            <h4>weight: </h4>
+                                            <p>{information && information.weight}</p>
+                                        </Li>
+                                    </Ul>
+                                </RightDiv>
+                            </InformationCard>
+                }
+            </PokemonCard>
+        </PokemonContainer>
     )
 }
 
