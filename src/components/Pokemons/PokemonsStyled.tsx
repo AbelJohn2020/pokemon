@@ -61,6 +61,7 @@ export const Div = styled.div`
 
     .cardPokemon {
         text-decoration: none;
+        outline: none;
         color: ${colors.lightBlack};
 
         &:visited {

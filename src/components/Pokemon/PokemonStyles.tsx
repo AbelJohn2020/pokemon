@@ -79,6 +79,15 @@ export const FirstBlockInRightDiv = styled.div`
     border-radius: 8px;
 `;
 
+export const SecondBlockInRightDiv = styled.div`
+    width: 100%;
+    padding: 24px 8px 0 8px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 8px;
+`;
+
 export const DivImg = styled.div`
     width: 100%;
     box-sizing: border-box;
@@ -96,6 +105,7 @@ export const H4Pokemon = styled.h4`
     font-family: "Flexo Medium";
     margin: 0 0 12px 0;
     box-sizing: border-box;
+    font-size: 20px;
 `;
 
 export const H4PokemonFB = styled.h4`
@@ -108,6 +118,7 @@ export const H4PokemonFB = styled.h4`
 `;
 
 export const Ul = styled.ul`
+    width: 100%;
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -135,20 +146,60 @@ export const Li = styled.li`
     box-sizing: border-box;
 `;
 
+export const BoxTypes = styled.div`
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+`;
+
+export const BoxMoves = styled.div`
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 33% 33% 33%;
+`;
+
 export const PPokemonFB = styled.p`
     margin: 8px 0;
     padding: 0 0 0 4px;
     text-transform: capitalize;
     font-family: "Flexo Medium";
     font-size: 20px;
+    font-weight: bold;
     box-sizing: border-box;
 `;
 
-export const PPokemon = styled.p`
-    margin: 8px 0;
-    padding: 0 0 0 4px;
+export const DivPPokemonSB = styled.div`
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: ${colors.darckNaure};
+    margin: 0 8px 0 0;
+    box-sizing: border-box;
+`;
+
+export const DivPPokemonTB = styled.div`
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: ${colors.orange};
+    margin: 0 8px 8px 0;
+    box-sizing: border-box;
+`;
+
+export const PPokemonSB = styled.p`
+    width: 100%;
+    margin: 2px;
+    padding: 0;
+    text-align: center;
     text-transform: capitalize;
     font-family: "Flexo Medium";
-    font-size: 18px;
+    font-size: 20px;
     box-sizing: border-box;
 `;

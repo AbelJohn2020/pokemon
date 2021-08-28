@@ -9,6 +9,7 @@ export const Nav = styled.div`
 
     .backMainPage {
         text-decoration: none;
+        outline: none;
     }
 `;
 

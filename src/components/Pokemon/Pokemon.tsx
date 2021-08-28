@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getId, informationPokemon } from '../utils';
 import Loading from '../Loading/Loading';
 import { InformationPokemon } from './Types';
-import { BoxTitle, DivImg, FirstBlockInRightDiv, H1Pokemon, H4Pokemon, H4PokemonFB, IdPokemon, Information, InformationCard, LeftDiv, Li, PlasticCard, PokemonCard, PokemonContainer, PPokemon, PPokemonFB, RightDiv, Ul, UlFB } from './PokemonStyles';
+import { BoxMoves, BoxTitle, BoxTypes, DivImg, DivPPokemonSB, DivPPokemonTB, FirstBlockInRightDiv, H1Pokemon, H4Pokemon, H4PokemonFB, IdPokemon, Information, InformationCard, LeftDiv, Li, PlasticCard, PokemonCard, PokemonContainer, PPokemonFB, PPokemonSB, RightDiv, SecondBlockInRightDiv, Ul, UlFB } from './PokemonStyles';
 
 type propsData = {
     id: string,
@@ -102,26 +102,40 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                                                     </Li>
                                                 </UlFB>
                                             </FirstBlockInRightDiv>
-                                            <Ul>
-                                                <Li>
-                                                    <H4Pokemon>main movements: </H4Pokemon>
-                                                    {
-                                                        information && 
-                                                            information.moves.slice(0, 8).map( move => (
-                                                                <PPokemon key={move}>{move}</PPokemon>
-                                                            ))
-                                                    }
-                                                </Li>
-                                                <Li>
-                                                    <H4Pokemon>type: </H4Pokemon>
-                                                    {
-                                                        information && 
-                                                            information.type.map( type => (
-                                                                <PPokemon key={type}>{type}</PPokemon>
-                                                            ))
-                                                    }
-                                                </Li>
-                                            </Ul>
+                                            <SecondBlockInRightDiv>
+                                                <Ul>
+                                                    <Li>
+                                                        <H4Pokemon>type: </H4Pokemon>
+                                                        <BoxTypes>
+                                                            {
+                                                                information && 
+                                                                    information.type.map( type => (
+                                                                        <DivPPokemonSB key={type}>
+                                                                            <PPokemonSB>{type}</PPokemonSB>
+                                                                        </DivPPokemonSB>
+                                                                    ))
+                                                            }
+                                                        </BoxTypes>
+                                                    </Li>
+                                                </Ul>
+                                            </SecondBlockInRightDiv>
+                                            <SecondBlockInRightDiv>
+                                                <Ul>
+                                                    <Li>
+                                                        <H4Pokemon>main movements: </H4Pokemon>
+                                                        <BoxMoves>
+                                                            {
+                                                                information && 
+                                                                    information.moves.slice(0, 9).map( move => (
+                                                                        <DivPPokemonTB key={move}>
+                                                                            <PPokemonSB>{move}</PPokemonSB>
+                                                                        </DivPPokemonTB>
+                                                                    ))
+                                                            }
+                                                        </BoxMoves>
+                                                    </Li>
+                                                </Ul>
+                                            </SecondBlockInRightDiv>
                                         </RightDiv>
                                     </InformationCard>
                                 </PlasticCard>

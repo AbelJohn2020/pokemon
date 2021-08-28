@@ -5,6 +5,8 @@ export const colors = {
     secondBlue: "#30a7d7",
     white: "#FFFFFF",
     lightWhite: "#F2F2F2",
+    orange: "#FD7D24",
+    darckNaure: "#A38C21",
     darkDarwhite: "#E8E8E8",
     lightGray: "#DDDDDD",
     gray: "#555555",
