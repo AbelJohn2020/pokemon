@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { informationPokemon } from '../utils';
 import Loading from '../Loading/Loading';
 import { InformationPokemon } from './Types';
-import { DivImg, H1Pokemon, H4Pokemon, Information, InformationCard, LeftDiv, Li, PokemonCard, PokemonContainer, PPokemon, RightDiv, Ul } from './PokemonStyles';
+import { DivImg, FirstBlockInRightDiv, H1Pokemon, H4Pokemon, Information, InformationCard, LeftDiv, Li, PokemonCard, PokemonContainer, PPokemon, RightDiv, Ul } from './PokemonStyles';
 
 type propsData = {
     id: string,
@@ -71,29 +71,33 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                                         </DivImg>
                                     </LeftDiv>
                                     <RightDiv>
-                                        <Ul>
-                                            <Li>
-                                                <H4Pokemon>base experience: </H4Pokemon>
-                                                <PPokemon>{information && information.experience}</PPokemon>
-                                            </Li>
-                                            <Li>
-                                                <H4Pokemon>heigh: </H4Pokemon>
-                                                <PPokemon>{information && information.height}</PPokemon>
-                                            </Li>
-                                            <Li>
-                                                <H4Pokemon>weight: </H4Pokemon>
-                                                <PPokemon>{information && information.weight}</PPokemon>
-                                            </Li>
-                                            <Li>
-                                                <H4Pokemon>abilities: </H4Pokemon>
-                                                {
-                                                    information && 
-                                                        information.abilities.map( ability => (
-                                                            <PPokemon key={ability}>{ability}</PPokemon>
-                                                        ))
-                                                }
-                                            </Li>
-                                        </Ul>
+                                        <FirstBlockInRightDiv>
+                                            <Ul>
+                                                <Li>
+                                                    <H4Pokemon>base experience: </H4Pokemon>
+                                                    <PPokemon>{information && information.experience}</PPokemon>
+                                                </Li>
+                                                <Li>
+                                                    <H4Pokemon>heigh: </H4Pokemon>
+                                                    <PPokemon>{information && information.height}</PPokemon>
+                                                </Li>
+                                                <Li>
+                                                    <H4Pokemon>weight: </H4Pokemon>
+                                                    <PPokemon>{information && information.weight}</PPokemon>
+                                                </Li>
+                                            </Ul>
+                                            <Ul>
+                                                <Li>
+                                                    <H4Pokemon>abilities: </H4Pokemon>
+                                                    {
+                                                        information && 
+                                                            information.abilities.map( ability => (
+                                                                <PPokemon key={ability}>{ability}</PPokemon>
+                                                            ))
+                                                    }
+                                                </Li>
+                                            </Ul>
+                                        </FirstBlockInRightDiv>
                                         <Ul>
                                             <Li>
                                                 <H4Pokemon>main movements: </H4Pokemon>
@@ -105,7 +109,7 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                                                 }
                                             </Li>
                                             <Li>
-                                                <h4>type: </h4>
+                                                <H4Pokemon>type: </H4Pokemon>
                                                 {
                                                     information && 
                                                         information.type.map( type => (

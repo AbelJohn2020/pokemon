@@ -6,6 +6,10 @@ export const Nav = styled.div`
     padding: 8px 12px;
     box-sizing: border-box;
     background: ${colors.blue};
+
+    .backMainPage {
+        text-decoration: none;
+    }
 `;
 
 export const Img = styled.img`

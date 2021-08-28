@@ -40,7 +40,17 @@ export const RightDiv = styled.div`
     width: 84%;
     padding: 0 16px;
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
+`;
+
+export const FirstBlockInRightDiv = styled.div`
+    width: 50%;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box;
+    background: ${colors.secondBlue};
+    border-radius: 8px;
 `;
 
 export const DivImg = styled.div`
@@ -61,6 +71,9 @@ export const H1Pokemon = styled.h1`
 
 export const H4Pokemon = styled.h4`
     text-transform: capitalize;
+    font-family: "Flexo Medium";
+    margin: 0 0 12px 0;
+    color: ${colors.lightWhite};
 `;
 
 export const Ul = styled.ul`
@@ -81,7 +94,9 @@ export const Li = styled.li`
 `;
 
 export const PPokemon = styled.p`
-    margin: 4px 0;
+    margin: 8px 0;
     padding: 0 0 0 4px;
     text-transform: capitalize;
+    font-family: "Flexo Medium";
+    font-size: 18px;
 `;

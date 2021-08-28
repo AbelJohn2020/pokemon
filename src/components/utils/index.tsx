@@ -29,7 +29,7 @@ const cardPokemon = ( pokemons: Array<propsPokemon> ) => {
         const getUrl = url.split('/');
         const getId = getUrl[6];
 
-        const getPicture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getId}.png`;
+        const getPicture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${getId}.png`;
 
         return {
             id: getId,
