@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getId, propsPokemon } from '../utils';
-import { Album, Container, Card, H1, Div, BoxImage, H3, P, H4, BoxIdName, Input, Header, ContainerAlbum } from './PokemonsStyled';
+import { Album, Container, Card, H1, Div, BoxImage, H3, P, H4, BoxIdName, Input, Header, ContainerAlbum, H3Validation, PChoose, PNoHyphen } from './PokemonsStyled';
 
 const Pokemons = ( pokemonData: propsPokemon[]) => {
     const dataPokemons = Object.values(pokemonData);
@@ -21,6 +21,8 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
     }
 
     const pokemons = findPokemons();
+    const notHyphen = inputValue.includes('-');
+    console.log(typeof(notHyphen))
 
     return (
         <Container>
@@ -32,30 +34,38 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
                     placeholder="Find your pokémon"
                     onChange={e => writeYourPokemon(e)}
                 />
-                <P>Choose your pokemon and discover more</P>
+                {
+                    notHyphen
+                        &&  <PNoHyphen>The number can not be negative and the words can not be separate by hyphen</PNoHyphen>
+                }
+                <PChoose notHyphen={notHyphen}>Choose your pokemon and discover more</PChoose>
             </Header>
             <ContainerAlbum>
-                <Album>
-                    {
-                        pokemons.map(({id, name, picture}) => (
-                            <Div key={id}>
-                                <Link to={`/pokemon/${id}`} className="cardPokemon">
-                                    <Card>
-                                        <div className="plastic">
-                                            <BoxImage>
-                                                    <img src={picture} alt={name} />
-                                            </BoxImage>
-                                        </div>
-                                        <BoxIdName>
-                                            <H4>{getId(id)}</H4>
-                                            <H3>{name}</H3>
-                                        </BoxIdName>
-                                    </Card>
-                                </Link>
-                            </Div>
-                        ))
-                    }
-                </Album>
+                {
+                    pokemons.length > 0
+                        ?   <Album>
+                                {
+                                    pokemons.map(({id, name, picture}) => (
+                                        <Div key={id}>
+                                            <Link to={`/pokemon/${id}`} className="cardPokemon">
+                                                <Card>
+                                                    <div className="plastic">
+                                                        <BoxImage>
+                                                            <img src={picture} alt={name} />
+                                                        </BoxImage>
+                                                    </div>
+                                                    <BoxIdName>
+                                                        <H4>{getId(id)}</H4>
+                                                        <H3>{name}</H3>
+                                                    </BoxIdName>
+                                                </Card>
+                                            </Link>
+                                        </Div>
+                                    ))
+                                }
+                            </Album>
+                        :   <H3Validation>Pokémon not found, please introduce a valid Name or Number</H3Validation>
+                }
             </ContainerAlbum>
         </Container>
     )

@@ -1,6 +1,11 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { colors } from "../UI/colors";
 import '../UI/styles.css';
+
+type propP = {
+    notHyphen: boolean
+}
 
 export const Container = styled.div`
     width: 100%;
@@ -35,8 +40,9 @@ export const Input = styled.input`
 
 export const ContainerAlbum = styled.div`
     width: 100%;
+    min-height: 398px;
     box-sizing: border-box;
-    padding: 8px 48px 48px 48px;
+    padding: 8px 48px 120px 48px;
     background: ${colors.lightGray};
 
     @media(max-width: 788px) {
@@ -45,7 +51,7 @@ export const ContainerAlbum = styled.div`
 `;
 
 export const Album = styled.div`
-    padding: 16px 0;
+    padding: 16px 0 48px 0;
     margin: 24px 0 0 0;
     width: 100%;
     display: grid;
@@ -164,4 +170,28 @@ export const P = styled.p`
     padding: 8px 0;
     width: 100%;
     color: ${colors.lightWhite};
+`;
+
+export const PChoose = styled.p(({notHyphen}: propP) => css`
+    box-sizing: border-box;
+    margin: 0;
+    padding: ${notHyphen ? '8px 0' : '43px 0 8px 0'};
+    width: 100%;
+    color: ${colors.lightWhite};
+`);
+
+export const PNoHyphen = styled.p`
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px 0;
+    width: 100%;
+    color: ${colors.lightWhite};
+`;
+
+export const H3Validation = styled.h3`
+    box-sizing: border-box;
+    margin: 0;
+    padding: 24px 0 8px 0;
+    width: 100%;
+    color: ${colors.secondBlack};
 `;
