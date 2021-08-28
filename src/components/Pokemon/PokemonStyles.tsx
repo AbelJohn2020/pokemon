@@ -9,6 +9,7 @@ export const PokemonContainer = styled.div`
     justify-content: center;
     font-family: 'Roboto';
     color: ${colors.secondBlack};
+    background: ${colors.lightGray};
 `;
 
 export const PokemonCard = styled.div`

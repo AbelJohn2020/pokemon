@@ -4,6 +4,7 @@ import { colors } from "../UI/colors";
 export const Nav = styled.div`
     width: 100%;
     padding: 8px 12px;
+    margin: 0;
     box-sizing: border-box;
     background: ${colors.blue};
 

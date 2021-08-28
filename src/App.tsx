@@ -7,7 +7,7 @@ import { getCharacters, propsPokemon } from './components/utils';
 
 function App() {
   const [pokemonData, setPokemonData] = useState<propsPokemon[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         getCharacters()

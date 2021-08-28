@@ -66,7 +66,6 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
     }
 
     const information = informationCard();
-    console.log(information);
 
     return (
         <PokemonContainer>

@@ -4,10 +4,39 @@ import '../UI/styles.css';
 
 export const Container = styled.div`
     width: 100%;
-    padding: 8px 48px 48px 48px;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: "Flexo Medium";
+`;
+
+export const Header = styled.div`
+    width: 100%;
+    box-sizing: border-box;
+    background: ${colors.secondBlack};
+    padding: 16px 0 48px 48px;
+`;
+
+export const Input = styled.input`
+    box-sizing: border-box;
+    width: 24%;
+    margin: 0;
+    padding: 8px 12px;
+    border: ${colors.borderInput} solid 2px;
+    font-size: 20px;
+    font-family: "Flexo Medium";
+    outline: none;
+    border-radius: 4px;
+
+    &::placeholder {
+        font-size: 16px;
+    }
+`;
+
+export const ContainerAlbum = styled.div`
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 48px 48px 48px;
     background: ${colors.lightGray};
 
     @media(max-width: 788px) {
@@ -106,11 +135,11 @@ export const BoxIdName = styled.div`
 
 export const H1 = styled.h1`
     width: 100%;
-    text-align: center;
-    margin: 16px 0 24px 0;
+    margin: 16px 0;
     paddgin: 0;
     text-transform: capitalize;
     box-sizing: border-box;
+    color: ${colors.lightWhite};
 `;
 
 export const H3 = styled.h3`
@@ -132,6 +161,7 @@ export const H4 = styled.h4`
 export const P = styled.p`
     box-sizing: border-box;
     margin: 0;
-    padding: 8px;
+    padding: 8px 0;
     width: 100%;
+    color: ${colors.lightWhite};
 `;

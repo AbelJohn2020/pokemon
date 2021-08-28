@@ -19,4 +19,5 @@ export const colors = {
     lightShadow: "rgba(255, 255, 255, 0.10)",
     lightBlack: "#444444",
     secondBlack: "#303030",
+    borderInput: "#616161",
 };
