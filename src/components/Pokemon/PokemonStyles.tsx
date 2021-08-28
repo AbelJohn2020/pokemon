@@ -58,6 +58,8 @@ export const IdPokemon = styled.h1`
 
 export const LeftDiv = styled.div`
     width: 40%;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
 `;
 
