@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { informationPokemon } from '../utils';
+import { getId, informationPokemon } from '../utils';
 import Loading from '../Loading/Loading';
 import { InformationPokemon } from './Types';
-import { DivImg, FirstBlockInRightDiv, H1Pokemon, H4Pokemon, Information, InformationCard, LeftDiv, Li, PokemonCard, PokemonContainer, PPokemon, RightDiv, Ul } from './PokemonStyles';
+import { BoxTitle, DivImg, FirstBlockInRightDiv, H1Pokemon, H4Pokemon, H4PokemonFB, IdPokemon, Information, InformationCard, LeftDiv, Li, PlasticCard, PokemonCard, PokemonContainer, PPokemon, PPokemonFB, RightDiv, Ul, UlFB } from './PokemonStyles';
 
 type propsData = {
     id: string,
@@ -63,63 +63,68 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                     isLoading
                         ?   <Loading />
                         :   <Information>
-                                <H1Pokemon>{name}</H1Pokemon>
-                                <InformationCard>
-                                    <LeftDiv>
-                                        <DivImg>
-                                            <img src={picture} alt={name} />
-                                        </DivImg>
-                                    </LeftDiv>
-                                    <RightDiv>
-                                        <FirstBlockInRightDiv>
+                                <BoxTitle>
+                                    <H1Pokemon>{name}</H1Pokemon>
+                                    <IdPokemon>{getId(id)}</IdPokemon>        
+                                </BoxTitle>
+                                <PlasticCard>
+                                    <InformationCard>
+                                        <LeftDiv>
+                                            <DivImg>
+                                                <img src={picture} alt={name} />
+                                            </DivImg>
+                                        </LeftDiv>
+                                        <RightDiv>
+                                            <FirstBlockInRightDiv>
+                                                <UlFB>
+                                                    <Li>
+                                                        <H4PokemonFB>base experience: </H4PokemonFB>
+                                                        <PPokemonFB>{information && information.experience}</PPokemonFB>
+                                                    </Li>
+                                                    <Li>
+                                                        <H4PokemonFB>heigh: </H4PokemonFB>
+                                                        <PPokemonFB>{information && information.height}</PPokemonFB>
+                                                    </Li>
+                                                    <Li>
+                                                        <H4PokemonFB>weight: </H4PokemonFB>
+                                                        <PPokemonFB>{information && information.weight}</PPokemonFB>
+                                                    </Li>
+                                                </UlFB>
+                                                <UlFB>
+                                                    <Li>
+                                                        <H4PokemonFB>abilities: </H4PokemonFB>
+                                                        {
+                                                            information && 
+                                                                information.abilities.map( ability => (
+                                                                    <PPokemonFB key={ability}>{ability}</PPokemonFB>
+                                                                ))
+                                                        }
+                                                    </Li>
+                                                </UlFB>
+                                            </FirstBlockInRightDiv>
                                             <Ul>
                                                 <Li>
-                                                    <H4Pokemon>base experience: </H4Pokemon>
-                                                    <PPokemon>{information && information.experience}</PPokemon>
-                                                </Li>
-                                                <Li>
-                                                    <H4Pokemon>heigh: </H4Pokemon>
-                                                    <PPokemon>{information && information.height}</PPokemon>
-                                                </Li>
-                                                <Li>
-                                                    <H4Pokemon>weight: </H4Pokemon>
-                                                    <PPokemon>{information && information.weight}</PPokemon>
-                                                </Li>
-                                            </Ul>
-                                            <Ul>
-                                                <Li>
-                                                    <H4Pokemon>abilities: </H4Pokemon>
+                                                    <H4Pokemon>main movements: </H4Pokemon>
                                                     {
                                                         information && 
-                                                            information.abilities.map( ability => (
-                                                                <PPokemon key={ability}>{ability}</PPokemon>
+                                                            information.moves.slice(0, 8).map( move => (
+                                                                <PPokemon key={move}>{move}</PPokemon>
+                                                            ))
+                                                    }
+                                                </Li>
+                                                <Li>
+                                                    <H4Pokemon>type: </H4Pokemon>
+                                                    {
+                                                        information && 
+                                                            information.type.map( type => (
+                                                                <PPokemon key={type}>{type}</PPokemon>
                                                             ))
                                                     }
                                                 </Li>
                                             </Ul>
-                                        </FirstBlockInRightDiv>
-                                        <Ul>
-                                            <Li>
-                                                <H4Pokemon>main movements: </H4Pokemon>
-                                                {
-                                                    information && 
-                                                        information.moves.slice(0, 8).map( move => (
-                                                            <PPokemon key={move}>{move}</PPokemon>
-                                                        ))
-                                                }
-                                            </Li>
-                                            <Li>
-                                                <H4Pokemon>type: </H4Pokemon>
-                                                {
-                                                    information && 
-                                                        information.type.map( type => (
-                                                            <PPokemon key={type}>{type}</PPokemon>
-                                                        ))
-                                                }
-                                            </Li>
-                                        </Ul>
-                                    </RightDiv>
-                                </InformationCard>
+                                        </RightDiv>
+                                    </InformationCard>
+                                </PlasticCard>
                             </Information>
                 }
             </PokemonCard>

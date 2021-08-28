@@ -1,27 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { propsPokemon } from '../utils';
+import { getId, propsPokemon } from '../utils';
 import { Album, Container, Card, H1, Div, BoxImage, H3, P, H4, BoxIdName } from './PokemonsStyled';
 
 const Pokemons = ( pokemonData: propsPokemon[]) => {
     const dataPokemons = Object.values(pokemonData);
-
-    const getId = (id: string) => {
-        const newId = parseInt(id)
-        if(newId <= 9) {
-            return `#000${id}`
-        } else {
-            if(newId <= 99) {
-                return `#00${id}`
-            } else {
-                if(newId <= 999) {
-                    return `#0${id}`
-                } else {
-                    return `#${id}`
-                }
-            }
-        }
-    }
 
     return (
         <Container>

@@ -41,3 +41,20 @@ const cardPokemon = ( pokemons: Array<propsPokemon> ) => {
 
     return newArrPokemon;
 }
+
+export const getId = (id: string) => {
+    const newId = parseInt(id)
+    if(newId <= 9) {
+        return `#000${id}`
+    } else {
+        if(newId <= 99) {
+            return `#00${id}`
+        } else {
+            if(newId <= 999) {
+                return `#0${id}`
+            } else {
+                return `#${id}`
+            }
+        }
+    }
+}

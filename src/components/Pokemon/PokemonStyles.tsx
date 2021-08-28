@@ -21,6 +21,12 @@ export const Information = styled.div`
     margin: 24px 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+`;
+
+export const PlasticCard = styled.div`
+    width: 80%;
     box-sizing: border-box;
 `;
 
@@ -31,13 +37,32 @@ export const InformationCard = styled.div`
     box-sizing: border-box;
 `;
 
+export const BoxTitle = styled.div`
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    box-sizing: border-box;
+`;
+
+export const H1Pokemon = styled.h1`
+    text-transform: capitalize;
+    box-sizing: border-box;
+`;
+
+export const IdPokemon = styled.h1`
+    padding: 0;
+    margin: 0 0 0 16px;
+    color: ${colors.gray};
+    box-sizing: border-box;
+`;
+
 export const LeftDiv = styled.div`
-    width: 24%;
+    width: 40%;
     box-sizing: border-box;
 `;
 
 export const RightDiv = styled.div`
-    width: 84%;
+    width: 60%;
     padding: 0 16px;
     display: flex;
     flex-direction: column;
@@ -45,9 +70,10 @@ export const RightDiv = styled.div`
 `;
 
 export const FirstBlockInRightDiv = styled.div`
-    width: 50%;
-    padding: 24px;
+    width: 100%;
+    padding: 24px 32px;
     display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
     background: ${colors.secondBlue};
     border-radius: 8px;
@@ -65,15 +91,20 @@ export const DivImg = styled.div`
     }
 `;
 
-export const H1Pokemon = styled.h1`
-    text-transform: capitalize;
-`;
-
 export const H4Pokemon = styled.h4`
     text-transform: capitalize;
     font-family: "Flexo Medium";
     margin: 0 0 12px 0;
+    box-sizing: border-box;
+`;
+
+export const H4PokemonFB = styled.h4`
+    text-transform: capitalize;
+    font-family: "Flexo Medium";
+    margin: 0 0 12px 0;
     color: ${colors.lightWhite};
+    font-size: 16px;
+    box-sizing: border-box;
 `;
 
 export const Ul = styled.ul`
@@ -82,7 +113,18 @@ export const Ul = styled.ul`
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 48px;
+    padding: 0;
+    margin: 0;
+`;
+
+export const UlFB = styled.ul`
+    width: 50%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
 `;
 
@@ -93,10 +135,20 @@ export const Li = styled.li`
     box-sizing: border-box;
 `;
 
+export const PPokemonFB = styled.p`
+    margin: 8px 0;
+    padding: 0 0 0 4px;
+    text-transform: capitalize;
+    font-family: "Flexo Medium";
+    font-size: 20px;
+    box-sizing: border-box;
+`;
+
 export const PPokemon = styled.p`
     margin: 8px 0;
     padding: 0 0 0 4px;
     text-transform: capitalize;
     font-family: "Flexo Medium";
     font-size: 18px;
+    box-sizing: border-box;
 `;
