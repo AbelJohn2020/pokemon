@@ -10,7 +10,7 @@ export type propsPokemon = {
 
 export const getCharacters = async () => {
     try {
-        const response = await pokeApi.get('/pokemon/');
+        const response = await pokeApi.get('/pokemon?limit=1200');
         const pokemons = response.data.results;
         return cardPokemon(pokemons);
     } catch(error) {

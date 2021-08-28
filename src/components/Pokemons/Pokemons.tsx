@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getId, propsPokemon } from '../utils';
-import { Album, Container, Card, H1, Div, BoxImage, H3, P, H4, BoxIdName, Input, Header, ContainerAlbum, H3Validation, PChoose, PNoHyphen } from './PokemonsStyled';
+import { Album, Container, Card, H1, Div, BoxImage, H3, P, H4, BoxIdName, Input, Header, ContainerAlbum, H3Validation, PChoose, PNoHyphen, DivButtons, Button } from './PokemonsStyled';
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 const Pokemons = ( pokemonData: propsPokemon[]) => {
     const dataPokemons = Object.values(pokemonData);
-    const [inputValue, setInputValue] = useState<string>('')
+    const [inputValue, setInputValue] = useState<string>('');
+    const [pagination, setPagination] = useState<number>(0);
 
     const findPokemons = () => {
         if(inputValue.length === 0) {
-            return dataPokemons;
+            return dataPokemons.slice(pagination, pagination+8);
         } else {
             const filterPokemons = dataPokemons.filter( pokemon => pokemon.name.includes(inputValue) || pokemon.id.includes(inputValue))
-            return filterPokemons;
+            return filterPokemons.slice(pagination, pagination+8);
+        }
+    }
+
+    const handleNext = () => {
+        if(pagination < dataPokemons.length-8) {
+            setPagination(pagination +8)
+        } else {
+            setPagination(0)
+        }
+    }
+
+    const hanldePrevious = () => {
+        if(pagination > 8) {
+            setPagination(pagination -8)
+        } else {
+            setPagination(0)
         }
     }
 
@@ -21,8 +39,12 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
     }
 
     const pokemons = findPokemons();
-    const notHyphen = inputValue.includes('-');
-    console.log(typeof(notHyphen))
+    const validationForSpecialCharacters = () => {
+        return inputValue.replace(/[-[/\]{}()*+?.,\\^$|#\s]/g, '');
+    }
+
+    const validation = validationForSpecialCharacters()
+    const notHyphen = validation.includes(inputValue);
 
     return (
         <Container>
@@ -35,12 +57,23 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
                     onChange={e => writeYourPokemon(e)}
                 />
                 {
-                    notHyphen
-                        &&  <PNoHyphen>The number can not be negative and the words can not be separate by hyphen</PNoHyphen>
+                    (notHyphen === false)
+                        &&  <PNoHyphen>Do not use special characters</PNoHyphen>
                 }
                 <PChoose notHyphen={notHyphen}>Choose your pokemon and discover more</PChoose>
             </Header>
             <ContainerAlbum>
+                <DivButtons>
+                    {
+                        pagination >= 8
+                            &&  <Button type="button" onClick={hanldePrevious}>
+                                    <GrPrevious />
+                                </Button>
+                    }
+                    <Button type="button" onClick={handleNext}>
+                        <GrNext />
+                    </Button>
+                </DivButtons>
                 {
                     pokemons.length > 0
                         ?   <Album>

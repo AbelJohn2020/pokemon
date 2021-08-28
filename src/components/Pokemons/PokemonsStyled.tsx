@@ -175,7 +175,7 @@ export const P = styled.p`
 export const PChoose = styled.p(({notHyphen}: propP) => css`
     box-sizing: border-box;
     margin: 0;
-    padding: ${notHyphen ? '8px 0' : '43px 0 8px 0'};
+    padding: ${notHyphen===false ? '8px 0' : '43px 0 8px 0'};
     width: 100%;
     color: ${colors.lightWhite};
 `);
@@ -194,4 +194,27 @@ export const H3Validation = styled.h3`
     padding: 24px 0 8px 0;
     width: 100%;
     color: ${colors.secondBlack};
+`;
+
+export const DivButtons = styled.div`
+    width: 100%;
+    padding: 8px;
+    margin: 16px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
+export const Button = styled.button`
+    box-sizing: border-box;
+    margin: 0 0 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    outline: none;
+    border: ${colors.midGray} solid 2px;
+    border-radius: 4px;
+    cursor: pointer;
 `;
