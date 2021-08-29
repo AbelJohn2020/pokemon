@@ -70,9 +70,12 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
                                     <GrPrevious />
                                 </Button>
                     }
-                    <Button type="button" onClick={handleNext}>
-                        <GrNext />
-                    </Button>
+                    {
+                        (notHyphen === true)
+                            &&  <Button type="button" onClick={handleNext}>
+                                    <GrNext />
+                                </Button>
+                    }
                 </DivButtons>
                 {
                     pokemons.length > 0

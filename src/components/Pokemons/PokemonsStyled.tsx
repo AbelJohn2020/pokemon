@@ -20,6 +20,10 @@ export const Header = styled.div`
     box-sizing: border-box;
     background: ${colors.secondBlack};
     padding: 16px 0 48px 48px;
+
+    @media(max-width: 500px) {
+        padding: 16px 0 16px 16px;
+    }
 `;
 
 export const Input = styled.input`
@@ -36,6 +40,14 @@ export const Input = styled.input`
     &::placeholder {
         font-size: 16px;
     }
+
+    @media(max-width: 788px) {
+        width: 48%;
+    }
+
+    @media(max-width: 500px) {
+        width: 72%;
+    }
 `;
 
 export const ContainerAlbum = styled.div`
@@ -47,6 +59,10 @@ export const ContainerAlbum = styled.div`
 
     @media(max-width: 788px) {
         padding: 8px 16px 16px 16px;
+    }
+
+    @media(max-width: 788px) {
+        padding: 4px;
     }
 `;
 
@@ -62,6 +78,10 @@ export const Album = styled.div`
     border-radius: 8px;
     box-sizing: border-box;
     background: ${colors.darkDarwhite};
+
+    @media(max-width: 788px) {
+        grid-template-columns: 48% 48%;
+    }
 `;
 
 export const Div = styled.div`
