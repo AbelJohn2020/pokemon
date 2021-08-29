@@ -46,7 +46,7 @@ export const Input = styled.input`
     }
 
     @media(max-width: 500px) {
-        width: 72%;
+        width: 92%;
     }
 `;
 

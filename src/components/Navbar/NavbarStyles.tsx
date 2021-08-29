@@ -23,4 +23,8 @@ export const Img = styled.img`
     @media(max-width: 788px) {
         width: 16%;
     }
+
+    @media(max-width: 500px) {
+        width: 24%;
+    }
 `;
