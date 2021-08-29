@@ -40,7 +40,7 @@ const Pokemons = ( pokemonData: propsPokemon[]) => {
 
     const pokemons = findPokemons();
     const validationForSpecialCharacters = () => {
-        return inputValue.replace(/[-[/\]{}()*+?.,\\^$|#\s]/g, '');
+        return inputValue.replace(/[[/\]{}()*+?.,\\^$|#\s]/g, '');
     }
 
     const validation = validationForSpecialCharacters()

@@ -6,8 +6,8 @@ export const PokemonContainer = styled.div`
     width: 100%;
     box-sizing: border-box;
     display: flex;
+    font-family: "Flexo Medium";
     justify-content: center;
-    font-family: 'Roboto';
     color: ${colors.secondBlack};
     background: ${colors.lightGray};
 `;
@@ -15,6 +15,15 @@ export const PokemonContainer = styled.div`
 export const PokemonCard = styled.div`
     width: 92%;
     box-sizing: border-box;
+
+    @media(max-width: 788px) {
+        width: 100%;
+        padding: 0 0 0 16px;
+    }
+
+    @media(max-width: 500px) {
+        padding: 0 16px;
+    }
 `;
 
 export const Information = styled.div`
@@ -29,6 +38,10 @@ export const Information = styled.div`
 export const PlasticCard = styled.div`
     width: 80%;
     box-sizing: border-box;
+
+    @media(max-width: 788px) {
+        width: 100%;
+    }
 `;
 
 export const InformationCard = styled.div`
@@ -36,6 +49,10 @@ export const InformationCard = styled.div`
     margin: 24px 0;
     display: flex;
     box-sizing: border-box;
+
+    @media(max-width: 500px) {
+        flex-direction: column;
+    }
 `;
 
 export const BoxTitle = styled.div`
@@ -62,6 +79,10 @@ export const LeftDiv = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+
+    @media(max-width: 500px) {
+        width: 100%;
+    }
 `;
 
 export const RightDiv = styled.div`
@@ -70,6 +91,10 @@ export const RightDiv = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+
+    @media(max-width: 500px) {
+        width: 100%;
+    }
 `;
 
 export const FirstBlockInRightDiv = styled.div`
@@ -80,6 +105,10 @@ export const FirstBlockInRightDiv = styled.div`
     box-sizing: border-box;
     background: ${colors.secondBlue};
     border-radius: 8px;
+
+    @media(max-width: 500px) {
+        margin: 12px 0 0 0;
+    }
 `;
 
 export const SecondBlockInRightDiv = styled.div`
@@ -156,6 +185,10 @@ export const BoxTypes = styled.div`
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
+
+    @media(max-width: 500px) {
+        grid-template-columns: 33.33% 33.33% 33.33%;
+    }
 `;
 
 export const BoxMoves = styled.div`
@@ -166,6 +199,14 @@ export const BoxMoves = styled.div`
     display: grid;
     justify-content: center;
     grid-template-columns: 33% 33% 33%;
+
+    @media(max-width: 788px) {
+        grid-template-columns: 33.33% 33.33% 33.33%;
+    }
+
+    @media(max-width: 500px) {
+        grid-template-columns: 50% 50%;
+    }
 `;
 
 export const PPokemonFB = styled.p`
@@ -185,6 +226,10 @@ export const DivPPokemonSB = styled.div`
     background: ${colors.darckNaure};
     margin: 0 8px 0 0;
     box-sizing: border-box;
+
+    @media(max-width: 788px) {
+        padding: 4px 8px;
+    }
 `;
 
 export const DivPPokemonTB = styled.div`
@@ -194,6 +239,10 @@ export const DivPPokemonTB = styled.div`
     background: ${colors.orange};
     margin: 0 8px 8px 0;
     box-sizing: border-box;
+
+    @media(max-width: 788px) {
+        padding: 4px 6px;
+    }
 `;
 
 export const PPokemonSB = styled.p`
@@ -205,4 +254,8 @@ export const PPokemonSB = styled.p`
     font-family: "Flexo Medium";
     font-size: 20px;
     box-sizing: border-box;
+
+    @media(max-width: 788px) {
+        font-size: 16px;
+    }
 `;

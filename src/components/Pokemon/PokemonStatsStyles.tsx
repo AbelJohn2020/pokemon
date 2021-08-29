@@ -31,8 +31,6 @@ export const ContainerStat = styled.div`
     box-sizing: border-box;
 `;
 
-// export const 
-
 export const GraphicStat = styled.div`
     box-sizing: border-box;
     width: 100%;
@@ -56,6 +54,10 @@ export const GraphicStat = styled.div`
 
     .propertyPokemon {
         background: ${colors.secondBlue};
+    }
+
+    @media(max-width: 788px) {
+        grid-template-rows: 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px;
     }
 `;
 
