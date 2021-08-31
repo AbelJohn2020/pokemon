@@ -19,7 +19,7 @@ function App() {
                         setLoading(false);
                     }
             })
-            .catch(error => console.log(error));
+            .catch(error => alert(`${error}: Error to connecting to server`));
     }, []);
   return (
     <div className="App">
@@ -27,7 +27,11 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <ListPokemons pokemonData={pokemonData} loading={loading} />
+            {
+              pokemonData 
+                ? <ListPokemons pokemonData={pokemonData} loading={loading} /> 
+                : <h1>Error to connecting to the server</h1>
+            }
           </Route>
           {
             pokemonData.map( data => (

@@ -27,7 +27,7 @@ const Pokemon = ({id, url, name, picture}: propsData) => {
                     setDataPokemon(res);
                 }
             })
-            .catch( error => error)
+            .catch( error => alert(`${error}: Error to connecting to server`))
             .finally(() => setIsLoading(false))
     }, []);
 
